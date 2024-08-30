@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pet.breed }} Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>{{ pet.breed }}</h2>
+        <p><span class="label">Age (approx):</span> {{ Pet.age }}</p>
+        <p><span class="label">Color:</span> {{ Pet.colour }}</p>
+        <p><span class="label">Other Identifications:</span> {{ Pet.identifications }}</p>
+        <p><span class="label">Location:</span> {{ Pet.location }}</p>
+        
+        <!-- Add any other fields you need to display here -->
+    </div>
+
+</body>
+</html>

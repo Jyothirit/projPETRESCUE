@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Pets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .adopt-button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .adopt-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registered Pets</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Breed</th>
+                <th>Age (approx)</th>
+                <th>Color</th>
+                
+                <th>Locations</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for pet in pets %}
+            <tr>
+                <td>{{ pet.breed }}</td>
+                <td>{{ pet.age }}</td>
+                <td>{{ pet.colour }}</td>
+                
+                <td>{{ pet.location }}</td>
+                <td>
+                    <form action="{% url 'adopt' %}" method="post">
+                        {% csrf_token %}
+                        <!-- Assuming 'name' is a unique identifier, adjust as needed -->
+                        
+                        <button type="submit" class="adopt-button">Adopt</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
