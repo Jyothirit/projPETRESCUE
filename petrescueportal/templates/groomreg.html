@@ -32,6 +32,7 @@
         }
         .form-container input[type="text"],
         .form-container input[type="number"],
+        .form-container input[type="file"],
         .form-container textarea {
             width: 100%;
             padding: 10px;
@@ -58,8 +59,8 @@
 <body>
 
     <div class="form-container">
-        <h2>Add Pet Details</h2>
-        <form action="/groomer_list/<str:name>/" method="POST">
+        <h2>Add  Details</h2>
+        <form action="/groom_list/" method="POST">
             {% csrf_token %}
 
            
@@ -73,16 +74,22 @@
             <label for="rate">Rate</label>
             <input type="text" id="rate" name="rate" required>
 
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required>
+
             
 
             <label for="location">Location</label>
             <input type="text" id="location" name="location" required>
+
+            <label for="certificate">Upload Certificates</label>
+            <input type="file" id="certificate" name="certificate" required>
             
 
             <button type="submit">Add Groomer</button>
         </form>
         <div class="login-link">
-            <p> Show or Edit Details <a href="/groom_list/<str:name>/">Click here</a></p>
+            <p> Show or Edit Details <a href="/groom_list">Click here</a></p>
         </div>
     </div>
 
