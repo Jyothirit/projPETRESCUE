@@ -1,0 +1,147 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Rescue Portal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">  <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: block;
+        margin: 0 auto;
+    }
+        header {
+            background-color: #12deed;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .intro h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .intro p {
+            font-size: 1.2em;
+        }
+        footer {
+            background-color: #12deed;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #1b98b7; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #457ba0; /* Darker green on hover */
+}
+
+.button:active {
+    background-color: #457ba0; /* Even darker green when clicked */
+}
+.container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .intro img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .intro h1,
+    .intro p {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+        border-radius: 8px;
+    }
+
+    .intro h1 {
+        top: 30%;
+        font-size: 2.5em;
+    }
+
+    .intro p {
+        top: 50%;
+        font-size: 1.5em;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>WELCOME TO THE PET RESCUE PORTAL</h1>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/adminlogin">LOGIN</a>
+            <a href="/userregister" class="button">Are you a new user? Register here</a> |
+            <a href="/rescueregister" class="button">Are you a Rescuer? Register here</a> |
+            <a href="/doctorreg" class="button">Doctors</a> |
+            <a href="/shelterreg/" class="button">Shelters</a> |
+            <a href="/groomreg/" class="button">Groomers</a> |
+            <a href="/about">About Us</a> |
+            <a href="/contact" >Contact Us</a> 
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h1>Find Your New Best Friend</h1>
+            <p>At Pet Rescue Portal, we connect you with pets in need of a loving home. Browse our listings, find your new best friend, and make a difference in an animal's life today.</p>
+            <img src="{% static 'images/img1home.jpg' %}" alt="Image Description">
+
+
+           
+        </section>
+
+        <!-- Additional sections and content can go here -->
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pet Rescue Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
