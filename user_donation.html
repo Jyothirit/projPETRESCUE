@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .donation-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="donation-container">
+        <h2>Donate to Support Us</h2>
+        <form action="donation" method="POST">
+            {% csrf_token %}
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="amount">Select Donation Amount</label>
+            <input type="radio" id="amount1" name="amount" value="10">
+            <label for="amount1">$10</label><br>
+            <input type="radio" id="amount2" name="amount" value="20">
+            <label for="amount2">$20</label><br>
+            <input type="radio" id="amount3" name="amount" value="50">
+            <label for="amount3">$50</label><br>
+            <input type="radio" id="amount4" name="amount" value="100">
+            <label for="amount4">$100</label><br>
+            <input type="radio" id="amount5" name="amount" value="other">
+            <label for="amount5">Other</label>
+            <input type="text" id="other-amount" name="other_amount" placeholder="Enter amount">
+
+            <button type="submit">Donate Now</button>
+        </form>
+    </div>
+
+</body>
+</html>
