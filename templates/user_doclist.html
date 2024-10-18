@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Doctors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #1b98b7; /* Green background */
+            color: white; /* White text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #457ba0; /* Darker green on hover */
+    }
+
+    </style>
+</head>
+<body>
+
+    <h2>Details :</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Full name</th>
+                <th>Specializing</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Experience</th>
+                <th>Chat</th>
+
+               
+            </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+            <tr>
+                <td>{{ doctor.name }}</td>
+                <td>{{ doctor.speciality }}</td>
+                <td>{{doctor.email }}</td>
+                <td>{{ doctor.contact}}</td>
+                <td>{{ doctor.experience}}</td>
+                <td><a href="/user_chat/{{ doctor.id}}/" class="button">Chat</a></td>
+                
+                
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

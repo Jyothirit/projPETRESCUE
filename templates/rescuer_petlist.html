@@ -1,0 +1,60 @@
+<!-- templates/pet_list.html -->
+<!-- templates/pet_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Pets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registered Pets</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Breed</th>
+                <th>Age(approx)</th>
+                <th>Color</th>
+                <th>Other identifications</th>
+                <th>Locations</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            {% for pet in pets %}
+            <tr>
+                <td>{{ pet.breed }}</td>
+                <td>{{ pet.age }}</td>
+                <td>{{ pet.colour }}</td>
+                <td>{{ pet.identification}}</td>
+                <td>{{ pet.location }}</td>
+                
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

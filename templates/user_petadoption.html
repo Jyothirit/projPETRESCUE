@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Pets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .adopt-button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .adopt-button:hover {
+            background-color: #45a049;
+        }
+        .search-form {
+            margin-bottom: 20px;
+        }
+        .search-input {
+            padding: 8px;
+            width: 200px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .search-button {
+            padding: 8px 16px;
+            background-color: #2505b4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #34a94f;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registered Pets</h2>
+
+    <form method="GET" action="{% url 'search_pets' %}" class="search-form">
+        <input type="text" name="q" class="search-input" placeholder="Search for pets...">
+        <button type="submit" class="search-button">Search</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Breed</th>
+                <th>Age (approx)</th>
+                <th>Color</th>
+                <th>Locations</th>
+                <th>Proceed to</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for pet in pets %}
+            <tr>
+                <td>{{ pet.breed }}</td>
+                <td>{{ pet.age }}</td>
+                <td>{{ pet.colour }}</td>
+                
+                <td>{{ pet.location }}</td>
+                <td><a href="/proceedtopay/{{ pet.id}}/" class="button"  style="padding: 10px 20px; background-color: #080aa0; color: white; text-decoration: none; border-radius: 5px; border: none;">Adopt</a></td>
+                
+                <!-- <td>
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        
+                        <button type="submit" class="adopt-button">Adopt</button>
+                    </form>
+                </td> -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
